@@ -1,0 +1,335 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 200px;
+    background-color: #FEFCFF;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+    
+    
+    
+    
+}
+.navigation a {
+
+   
+    font-weight: 500;
+    font-size:1.1em;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.navigation2 a {
+
+   
+    font-weight: 500;
+    font-size:1.1em;
+    padding-left: 30px;
+    text-decoration: none;
+}
+.Main{
+    text-decoration: none;
+    font-weight: 700;/*هذا يخلي الكلمة عريضه ولكن نفس حجمها*/
+    font-size: 1.8em;
+}
+.h11{
+    color: wheat;
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-top: 100px;
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 50px;
+   
+}
+.a{
+    background-color:rgb(0, 119, 255);
+    margin: auto;
+    width: 300px;
+    border-radius: 20px;
+}
+.flex-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+   
+}
+.flex-box{
+    width: 200px;
+    height: 200px;
+    background:  rgb(0, 119, 255);
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 10px;
+}
+.flex-container .flex-box .pic{
+    width: 80px;
+    height: 70px;
+}
+.P{
+    font-size:medium;
+}
+.bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.flex-container .flex-box h4{
+    font-size:medium
+}
+
+
+.sec2 {
+    
+    background-color: rgb(0, 119, 255);
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.div-sec2 h1{
+    color:wheat;
+    font-size: 100px;
+    /* text-align: center; */
+}
+.div-sec2 p{
+    color:wheat;
+    font-size: 50px;
+    /* text-align: center; */
+}
+.sec3{
+   width: 70%;
+   margin: 100px auto;
+   background: #fff;
+   border-radius: 7px ;
+   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+ 
+}
+.faqs{
+    padding: 0px 20px 20px;
+}
+details{
+   background: lightgrey;
+   padding: 10px 20px;
+   border-radius: 7px;
+   margin-top: 10px;
+}
+hr{
+    border: 2px solid lightgrey;
+}
+.hr1{
+    border: 1px solid black;
+    margin: 5px;
+}
+  input[type=text], select, textarea {
+    width:500px; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    /* resize: vertical Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  input[type=password], select, textarea {
+    width:500px; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    /* resize: vertical Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  input[type=email], select, textarea {
+    width:500px; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    /* resize: vertical Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: rgba(0, 17, 255, 0.72);;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: rgba(0, 30, 255, 0.424);
+  }
+  
+  /* Add a background color and some padding around the form */
+  .Contact {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    max-width: fit-content;
+    margin: auto;
+    width: 50%;
+}
+#h1-content{
+    color: black;
+    text-align: center;
+    margin-bottom: 80px;
+    margin-top: 80px;
+    font-size:70px;
+}
+.h4-price{
+    color:burlywood;
+    margin-right: 5px;
+}
+.First-Details{
+    cursor: pointer;
+    text-align: center;
+    background-color:bisque;
+    
+    
+}
+.First-summary{
+    color:darkblue;
+    font-size: 35px;
+}
+button{
+    cursor: pointer;
+}
+#fa-copyright{
+    color: red;
+    margin-right: 10px;
+    margin-top: 50px;
+}
+#signin-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   
+    
+}
+
+#signin-div{
+   background: rgba(0, 17, 255, 0.72); 
+ 
+   padding: 70px 100px; 
+   border-radius: 10px; 
+  
+}
+#Flabel{
+    color:bisque;
+    margin-left: 400px;
+    font-size: larger;
+    
+}
+#Slabel{
+    color: bisque;
+    margin-left: 400px;
+    font-size: larger;
+    
+}
+
+#Tlabel{
+    color:  black;
+   
+}
+
+#forget{
+    margin-right: 320px;
+    color: white;
+
+}
+#checkbox1{
+    margin-right: 10px;
+}
+.bt{
+    width: 100%;
+    margin-top: 50px;
+    padding: 14px 20px;
+    font-size: 30px;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+    background-color: bisque;
+    
+    
+    
+}
+#h1-in{
+   text-align: center;
+   margin-bottom: 50px;
+   color: bisque;
+}
+
+#signupl{
+    margin-left: 425px;
+    color: bisque;
+    font-size: large;
+}
+#signupl1{
+    margin-left: 360px;
+    color: bisque;
+    font-size: large;
+}
+#signupl2{
+    margin-left: 435px;
+    color: bisque;
+    font-size: large;
+
+}
+#signupl3{
+    margin-left: 430px;
+    color: bisque;
+    font-size: large;
+}
+#signupl4{
+    margin-left: 455px;
+    color: bisque;
+    font-size: large;
+}
+#signupl5{
+    margin-left: 425px;
+    color: bisque;
+    font-size: large;
+}
+
+#Tlabel{
+   color: bisque;
+}
+.input1{
+    text-align: right;
+}
+span{
+   background-color: red;
+   border-radius: 50%;
+   width: 15px;
+   height: 15px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 600;
+   position: absolute;
+   top: +1px;
+}
+
+
+

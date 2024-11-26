@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link href="Css.css" rel="stylesheet">
+</head>
+<body id="signin-body">
+    <div id="signin-div">
+        <h1 id="h1-in">تسجيل الدخول</h1>
+        <form method="post" action="login.php">
+            <label id="Flabel">اسم المستخدم</label><br>
+            <input type="text" name="username" placeholder="اسم المستخدم" required><br>
+            <label id="Slabel">كلمة المرور </label><br>
+            <input type="password" name="password" placeholder="كلمة المرور" required><br>
+            <div id="checkbox-forgetpass-div">
+                <input type="checkbox" id="checkbox1"> <label id="Tlabel">تذكرني</label> <a href="#" id="forget">نسيت كلمة المرور؟</a><br>
+            </div>
+            <button class="bt" type="submit">دخول</button>
+        </form>
+        <a href="html.html"><button class="bt">عودة</button></a>
+    </div>
+</body>
+</html>

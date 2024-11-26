@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العربة</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartContainer = document.getElementById('cart-items');
+            const totalContainer = document.getElementById('total-price');
+            const confirmButton = document.getElementById('btn'); // الزر الخاص بتأكيد الشراء
+    
+            // استرجاع المنتجات من LocalStorage
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            if (cart.length > 0) {
+                // عرض المنتجات في العربة
+                cart.forEach((price, index) => {
+                    const item = document.createElement('p');
+                    item.innerText = `منتج ${index + 1}: ${price} ريال`;
+                    cartContainer.appendChild(item);
+                });
+    
+                // حساب الإجمالي
+                const total = cart.reduce((acc, curr) => acc + curr, 0);
+                totalContainer.innerText = `الإجمالي: ${total} ريال`;
+            } else {
+                cartContainer.innerText = 'العربة فارغة';
+            }
+    
+            // إضافة وظيفة عند الضغط على زر "تأكيد الشراء"
+            confirmButton.addEventListener('click', () => {
+                alert("تم استلام فاتورتك بنجاح! سوف تصلك رسالة على الإيميل بموعد استلام طلبك.");
+            });
+        });
+    
+        // حذف محتويات العربة عند مغادرة الصفحة
+        window.addEventListener('beforeunload', () => {
+            localStorage.removeItem('cart');
+        });
+    </script>
+    
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    
+    <h1>صفحة العربة</h1>
+    <div id="cart-items"></div>
+    <h3 id="total-price"></h3>
+    <a href="html.html">العودة للصفحة الرئيسية</a>
+    <div id="container">
+        <div id="content">
+     <h1 id="h1-ckeckout">الدفع</h1>
+     <p id="p-pragraf">يرجى ملء النموذج أدناه لإكمال عملية الشراء الخاصة بك
+    </p>
+     <h3 id="A">اسم البطاقة</h3>
+     <input class ="Inputs" type="text" placeholder="أدخل اسم بطاقتك بالكامل">
+     <h3 id="B">الإيميل</h3>
+     <input class ="Inputs" type="email" placeholder="أدخل بريدك الإلكتروني">
+     <h3 id="C">رقم البطاقة</h3>
+     <input class ="Inputs" type="text" placeholder="أدخل رقم بطاقتك">
+     <h3 id="D">تاريخ انتهاء الصلاحية</h3>
+     <input class ="Inputs" type="date" placeholder="أدخل تاريخ انتهاء صلاحية بطاقتك">
+     <h3 id="E">CVV</h3>
+     <input class ="Inputs" type="text" placeholder="أدخل رمز CVV الخاص ببطاقتك"><br>
+     <div id="buttom-div">
+     <button id ="btn">تأكيد الشراء</button>
+     </div>
+       </div>
+    </div>
+    
+
+</body>
+</html>

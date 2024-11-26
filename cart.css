@@ -1,0 +1,76 @@
+body{
+    color: red;
+    text-align: center;
+  
+}
+
+#container{
+    
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    margin-top: 30px;
+    
+}
+
+   
+
+#content .Inputs{
+   width: 70%;
+   padding: 8px;
+   border-radius: 4px;
+   padding: 12px 20px;
+   color: black;
+   border: none;
+   text-align: right;
+}
+#content{
+  background: rgba(0, 17, 255, 0.72);
+  border-radius: 10px;
+  padding-top: 10px;
+}
+#btn{
+    /* margin-top: 10px; */
+    margin-bottom: 50px;
+    width: 90%;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: bisque;
+    margin-top: 50px;
+    padding: 14px 20px;
+    
+}
+#h1-ckeckout{
+    color: bisque;
+    font-size:50px;
+    
+    
+}
+#p-pragraf{
+    color: bisque;
+    font-size: 30px;
+}
+
+#A{
+    margin-left: 65%;
+    color: bisque;
+    
+}
+#B{
+    margin-left: 68%;
+    color: bisque;
+}
+#C{
+    margin-left: 65%;
+    color: bisque;
+}
+#D{
+    margin-left: 58%;
+    color: bisque;
+}
+#E{
+    margin-left: 67%;
+    color: bisque;
+}

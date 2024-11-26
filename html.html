@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوفية الحزم</title>
+    <link href="Css.css" rel="Stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+            // تحديد الأزرار داخل div.bottom
+            const buttons = document.querySelectorAll('.bottom button');
+            const clickCountSpan = document.getElementById('click-count');
+            const cartLink = document.getElementById('cart-link');
+            let clickCount = 0;
+
+            // تعيين قيمة الـ span إلى 0 بشكل افتراضي
+            clickCountSpan.innerText = clickCount;
+
+            // التعامل مع عدد الضغطات
+            buttons.forEach((button) => {
+                button.addEventListener('click', (event) => {
+                    // زيادة العدد عند الضغط على الزر
+                    clickCount++; 
+                    clickCountSpan.innerText = clickCount; // تحديث الـ span
+
+                    // العثور على div الأب
+                    const productDiv = event.target.closest('.bottom');
+                    // الحصول على النص الكامل للسعر
+                    const priceText = productDiv.querySelector('.h4-price').innerText;
+                    // استخراج الرقم فقط من النص باستخدام regex
+                    const price = parseFloat(priceText.match(/\d+/)[0]);
+
+                    // قراءة البيانات الحالية في العربة (إن وجدت) من LocalStorage
+                    const currentCart = JSON.parse(localStorage.getItem('cart')) || [];
+                    currentCart.push(price); // إضافة السعر إلى العربة
+                    localStorage.setItem('cart', JSON.stringify(currentCart)); // تخزين العربة
+
+                    alert(`تمت إضافة المنتج بسعر ${price} ريال إلى العربة!`);
+                });
+            });
+
+            // إعادة عدد الضغطات إلى 0 عند الضغط على وصلة العربة
+            cartLink.addEventListener('click', () => {
+                clickCount = 0; // إعادة العدد إلى 0
+                clickCountSpan.innerText = clickCount; // تحديث الـ span
+            });
+        });
+
+  </script>
+   </head>
+<body>
+   <header>
+    <a href="#" class="Main">الرئيسية</a>
+      <nav class="navigation">
+        <a id="cart-link" href="cart.html">العربة </a>
+        <a href="#من نحن؟ ">من نحن؟</a>    
+        <a href="#الأسئلة الشائعة">الأسئلة الشائعة</a>
+        <a href="#تواصل معنا">تواصل معنا</a>
+        <a href="#الوجبات">الوجبات</a>
+        <span id="click-count">0</span>
+
+      </nav>
+      <nav class="navigation2">
+      <a href="signup.html">تسجيل جديد</a>
+      <a href="login.html">تسجيل الدخول</a>
+      </nav>
+   </header>
+   
+   <section class="about">
+   
+    <div class="a">
+        <h1 class="h11">الوجبات</h1>
+    </div>
+   <details class="First-Details">
+      <summary class="First-summary">الوجبات</summary>
+    <div class="flex-container">
+       <div class="flex-box">
+           <h1>بيج تايستي</h1>
+           <img class="pic" src="F1-1.avif">
+           <p class="P">وجبة تتكون من برجر لحم و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:20 ريال</h4>
+               <button>+</button>
+            </div>
+           
+       </div>
+       <div class="flex-box">
+        <h1>جراند تشيكن</h1>
+        <img class="pic" src="pic.jfif">
+           <p class="P">وجبة تتكون من برجر دجاج و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:23 ريال</h4>
+               <button>+</button>
+            </div>
+        
+       </div>
+       <div class="flex-box">
+        <h1>بيج حزم</h1>
+        <img class="pic" src="F1-2.jfif">
+           <p class="P">وجبة تتكون من ثلاث قطع لحم و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:16 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+       <div class="flex-box">
+        <h1>تشيكن حزم</h1>
+        <img class="pic" src="F1-3.jfif">
+           <p class="P">وجبة تتكون من برجر دجاج و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:20 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+       <div class="flex-box">
+        <h1>حزم عربي</h1>
+        <img class="pic" src="F1-4.jpg">
+           <p class="P">وجبة تتكون من شطيرة عربيه و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:21 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+       <div class="flex-box">
+        <h1> حزم رويال</h1>
+        <img class="pic" src="F1-5.jfif">
+           <p class="P">وجبة تتكون من برجر لحم و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:27 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+       <div class="flex-box">
+        <h1>ناجت وجبة </h1>
+        <img class="pic" src="F1-6.jpg">
+           <p class="P">وجبة تتكون من 8 قطع ناجتس و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:28 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+       <div class="flex-box">
+        <h1>تشيبوتلي </h1>
+        <img class="pic" src="F1-7.jpg">
+           <p class="P">وجبة تتكون من سانوتش دجاج و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:25 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+       <div class="flex-box">
+        <h1>ليتل تايستي</h1>
+        <img class="pic" src="F1-8.jpg">
+           <p class="P">وجبة تتكون من ثلاث قطع دجاج و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:22 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+      
+      
+       <div class="flex-box">
+        <h1>تربل تشيز</h1>
+        <img class="pic" src="F1-9.jpg">
+           <p class="P">وجبة تتكون من ثلاث قطع لحم و بطاطس و مشروب غازي</p><hr class="hr1">
+           <div class="bottom">
+              
+                <h4 class="h4-price">السعر:18 ريال</h4>
+               <button>+</button>
+            </div>
+       </div>
+      </details>
+       
+     
+        
+    </div>
+   <details class="First-Details">
+      <summary class="First-summary">الساندوتشات</summary>
+    <div class="flex-container">
+        <div class="flex-box">
+            <h1>بيج تايستي</h1>
+            <img class="pic" src="F-2-1.jfif">
+            <p class="P">ساندوتش تتكون من برجر لحم مع الطماط و الخس</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:14 ريال</h4>
+                <button>+</button>
+             </div>
+            
+        </div>
+        <div class="flex-box">
+         <h1>جراند تشيكن</h1>
+         <img class="pic" src="F-2-2.jfif">
+            <p class="P">ساندوتش تتكون من برجر دجاج كبيرة مع طماط و خس</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:12 ريال</h4>
+                <button>+</button>
+             </div>
+         
+        </div>
+        <div class="flex-box">
+         <h1>بيج حزم</h1>
+         <img class="pic" src="F-2-3.jfif">
+            <p class="P">ساندوتش تتكون من برجر ثلاث قطع لحم مع خبز السمسم</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:15 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>تشيكن حزم</h1>
+         <img class="pic" src="F-2-4.jfif">
+            <p class="P">ساندوتش تتكون من برجر دجاج مع صوص الرانش و الخس</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:11 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>حزم عربي</h1>
+         <img class="pic" src="F-2-5.jfif">
+            <p class="P">ساندوتش تتكون من شطيرةدجاج بطابع عربي</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:9 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>حزم رويال</h1>
+         <img class="pic" src="F-2-6.jfif">
+            <p class="P">ساندوتش تتكون من برجر لحم مع الخس و الطماط</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:13 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>ناجتس</h1>
+         <img class="pic" src="F-2-7.jfif">
+            <p class="P">5 قطع ناجتس</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:6 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>تشيبوتلي</h1>
+         <img class="pic" src="F-2-8.jfif">
+            <p class="P">ساندوتش تتكون من شطيرة دجاج مع الصوص الحار</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:14 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>ليتل تايستي</h1>
+         <img class="pic" src="F-2-9.jfif">
+            <p class="P">ساندوتش تكون من برجر ثلاث قطع دجاج</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:11 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+      
+      
+        <div class="flex-box">
+         <h1>تربل تشيز</h1>
+         <img class="pic" src="F-2-10.jfif">
+            <p class="P">ساندوتش تتكون من برجر ثلاث قطع لحم</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:9 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+      </details>
+        
+      
+         
+     </div>
+   <details class="First-Details">
+      <summary class="First-summary">الإضافات</summary>
+      
+     <div class="flex-container">
+        <div class="flex-box">
+            <h1>سلطة سيزر</h1>
+            <img class="pic" src="F-3-1.jfif">
+            <p class="P">سلطة دجاج و خس و ملفوف</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:5 ريال</h4>
+                <button>+</button>
+             </div>
+            
+        </div>
+        <div class="flex-box">
+         <h1>بطاطس</h1>
+         <img class="pic" src="F-3-2.jpg">
+            <p class="P">بطاطس مالح </p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:4 ريال</h4>
+                <button>+</button>
+             </div>
+         
+        </div>
+        <div class="flex-box">
+         <h1> شريحة انناس</h1>
+         <img class="pic" src="F-3-3.jfif">
+            <p class="P">شرائح انناس منعشة</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:3 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>قطع تفاح</h1>
+         <img class="pic" src="F-3-4.jfif">
+            <p class="P">4 قطع تفاح للإفطار</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:1 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>كوكا كولا</h1>
+         <img class="pic" src="F-3-5.jfif">
+            <p class="P">مشروب غازي منعش </p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:2.5 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>فانتا</h1>
+         <img class="pic" src="F-3-6.jfif">
+            <p class="P">مشروب غازي منعش</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:2.5 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>فلوري اوريو</h1>
+         <img class="pic" src="F-3-7.jfif">
+            <p class="P">ايسكريم حزم فلوري اوريو لحر الصيف</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:13 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>صانداي</h1>
+         <img class="pic" src="F-3-8.jfif">
+            <p class="P">كراميل رائع المذاق يغطي الايس كريم لتذوب في الحلاوة
+            </p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:7 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        <div class="flex-box">
+         <h1>باربيكيو</h1>
+         <img class="pic" src="F-3-9.jfif">
+            <p class="P">صوص باربيكيو لذيذ النكهه</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:2 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+      
+      
+        <div class="flex-box">
+         <h1>ثوم</h1>
+         <img class="pic" src="pic.jfif">
+            <p class="P">صوص الثوم لذيذ النكهه</p><hr class="hr1">
+            <div class="bottom">
+               
+                 <h4 class="h4-price">السعر:2 ريال</h4>
+                <button>+</button>
+             </div>
+        </div>
+        
+      </details>
+      
+      
+        
+      
+         
+     </div>
+   </section>
+   <hr>
+   <section class="sec2" id="من نحن؟">
+       <div class="div-sec2">
+          <h1>من نحن؟</h1>
+          <p>نحن مطاعم بوفية الحزم نقدم اطهى الوجبات الطازجة و اللذيذة</p>
+       </div>
+   </section>
+   <hr>
+   <section class="sec3" id="الأسئلة الشائعة">
+    <div class="div-sec3">
+         <h1>الأسئلة الشائعة</h1>
+         <div class="faqs">
+            <details>
+                <summary>اين موقع المطعم؟</summary>
+                <p>حي الحزم- شارع المشتل امام مطاعم الرومانسية</p>
+            </details>
+            <details>
+                <summary>هل يمكنني استرداد مالي بعد اكل الوجبة اذا لم تعجبني؟</summary>
+                <p>يسمح لك استرداد مالك لمرة واحدة فقط اذا لم يعجبك الاكل</p>
+            </details>
+            <details>
+                <summary>هل يمكنني التواصل مع مدير المطعم؟</summary>
+                <p>بكل تأكيد!-للتواصل مع ايميل مدير المطعم(444911450@OUTLOOK.SA)</p>
+            </details>
+            <details>
+                <summary>هل لكم فروع اخرى؟</summary>
+                <p>لا</p>
+            </details>
+            <details>
+                <summary>هل بوفية الحزم مقلدة لماك دونالز؟</summary>
+                <p>بكل تأكيد لا, فجميع وصفاتنا صنعت بأحترافية من الشيف نواف العجمي</p>
+            </details>
+         </div>
+    </div>
+   </section><hr>
+   <h1 id="h1-content">تواصل معنا</h1>
+<div class="Contact" id="تواصل معنا">
+    <form action="contact.php" method="post">
+        <label for="fname">الأسم الأول</label><br>
+        <input type="text" id="fname" name="first_name" placeholder="اسمك.." required><br>
+
+        <label for="lname">الأسم الأخير</label><br>
+        <input type="text" id="lname" name="last_name" placeholder="اسمك الأخير.." required><br>
+
+        <label for="country">الدولة</label><br>
+        <select id="country" name="country">
+            <option value="السعودية">المملكة العربية السعودية</option>
+            <option value="مصر">مصر</option>
+            <option value="السودان">السودان</option>
+            <option value="سوريا">سوريا</option>
+            <option value="الأردن">الأردن</option>
+            <option value="العراق">العراق</option>
+            <option value="الكويت">الكويت</option>
+            <option value="البحرين">البحرين</option>
+            <option value="قطر">قطر</option>
+            <option value="الإمارات">الإمارات</option>
+            <option value="عمان">عمان</option>
+            <option value="اليمن">اليمن</option>
+            <option value="لبنان">لبنان</option>
+            <option value="فلسطين">فلسطين</option>
+            <option value="ليبيا">ليبيا</option>
+            <option value="تونس">تونس</option>
+            <option value="الجزائر">الجزائر</option>
+            <option value="المغرب">المغرب</option>
+            <option value="موريتانيا">موريتانيا</option>
+            <option value="أخرى">أخرى</option>
+        </select><br>
+
+        <label for="subject">الموضوع</label><br>
+        <textarea id="subject" name="subject" placeholder="اكتب شيء.." style="height:200px" required></textarea><br>
+
+        <input type="submit" value="تأكيد">
+    </form>
+</div>
+
+
+    <footer>
+      <i class="fa-regular fa-copyright" id="fa-copyright">نواف محمد العجمي-444911450-2024</i>
+      
+      
+    </footer>
+    
+</body>
+</html>
